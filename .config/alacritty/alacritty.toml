@@ -1,0 +1,28 @@
+shell = "zsh"
+
+
+[font]
+size = 14
+normal = { family = "JetBrainsMono Nerd Font", style = "Regular"}
+
+
+[window]
+dimensions = { columns = 133, lines = 30}
+position = {y = 960, x=540}
+padding = { x = 16, y = 16}
+dynamic_padding = true
+opacity = 0.8
+decorations = "None"
+title = "Br1cky"
+
+[colors]
+
+[colors.primary]
+foreground = "#D85BE9"
+background = "#1B1244"
+
+[cursor]
+style = { shape = "Beam", blinking = "Off"  }
+
+[mouse]
+hide_when_typing = true
