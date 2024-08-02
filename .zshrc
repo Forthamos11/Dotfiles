@@ -9,7 +9,6 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 
 plugins=(git colorize command-not-found zsh-autosuggestions fast-syntax-highlighting tmux)
-export ZSH_TMUX_AUTOSTART=true
 source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
