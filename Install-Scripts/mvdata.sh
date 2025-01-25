@@ -2,10 +2,10 @@
 
 # Set variables
 DEST_DIR="$HOME"
-EXCLUDED_DIRS=(".github" "Install-Scripts") # .config REMOVED from exclusion list
+EXCLUDED_DIRS=(".github" "Install-Scripts")
 
-# Loop through all items in the home directory
-for item in "$HOME"/*; do
+# Loop through all items in the current directory (where the script is run)
+for item in *; do # Changed "$HOME"/* to *
   # Get the base name of the item (filename or directory name)
   base_name=$(basename "$item")
 
@@ -22,12 +22,12 @@ for item in "$HOME"/*; do
   fi
 
   # Skip the script itself
-  if [ "$item" = "$0" ]; then
+  if [ "$item" = "$(basename "$0")" ]; then # Corrected script skipping
     continue
   fi
 
   # Check if the destination is different from the source
-  if [ "$item" != "$DEST_DIR/$base_name" ]; then
+  if [ "$PWD/$item" != "$DEST_DIR/$base_name" ]; then # Added $PWD to source path
 
     # Check if a file or directory with the same name already exists in the destination. If so, prompt the user.
     if [ -e "$DEST_DIR/$base_name" ]; then
