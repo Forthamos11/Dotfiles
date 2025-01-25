@@ -8,4 +8,4 @@ chmod +x ./Install-Scripts/install-oh-my-zsh.sh
 
 # Start Configuring the Stuff!
 chmod +x ./Install-Scripts/mvdata.sh
-/bin/bash ./install-Scripts/mvdata.sh
+/bin/bash ./Install-Scripts/mvdata.sh
