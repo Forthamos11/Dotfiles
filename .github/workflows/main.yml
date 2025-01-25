@@ -1,11 +1,20 @@
+name: Run Script
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
 jobs:
-  example-job:
+  run-script:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./Install-Scripts
     steps:
-      - name: Check out the repository to the runner
-        uses: actions/checkout@v4  
-      - name: Run the install script
-        run: ./install.sh
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x ./Install-Scripts/install.sh
+
+      - name: Run the script
+        run: ./Install-Scripts/install.sh
