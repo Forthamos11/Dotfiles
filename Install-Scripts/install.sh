@@ -1,3 +1,3 @@
 #! /bin/sh
-sudo apt install zsh dotnet-build dotnet-sdk exa thefuck
+sudo apt install zsh eza thefuck
 curl -fsSL https://bun.sh/install | bash
