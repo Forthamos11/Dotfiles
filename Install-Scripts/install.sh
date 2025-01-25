@@ -7,4 +7,5 @@ chmod +x ./Install-Scripts/install-oh-my-zsh.sh
 /bin/bash ./Install-Scripts/install-oh-my-zsh.sh
 
 # Start Configuring the Stuff!
-source $USER/.zshrc
+chmod +x ./Install-Scripts/mvdata.sh
+/bin/bash ./install-Scripts/mvdata.sh
