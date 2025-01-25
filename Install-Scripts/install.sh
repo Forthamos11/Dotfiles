@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Handle the User Installations
 sudo apt install zsh eza thefuck

@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # Set variables for non-interactive installation
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
