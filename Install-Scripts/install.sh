@@ -1,2 +1,3 @@
 #! /bin/sh
-echo "AUF DIE FRESSE RAP"
+sudo apt install zsh dotnet-build dotnet-sdk exa thefuck
+curl -fsSL https://bun.sh/install | bash
