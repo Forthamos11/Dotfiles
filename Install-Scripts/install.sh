@@ -2,11 +2,13 @@
 
 #==============
 # Handle the User Installations
-sudo apt install zsh eza thefuck batcat
+#==============
+sudo apt install eza thefuck
+sudo apt-get install zsh
 curl -fsSL https://bun.sh/install | bash
 chmod +x ./Install-Scripts/install-oh-my-zsh.sh
 /bin/bash ./Install-Scripts/install-oh-my-zsh.sh
-#==============
+
 
 #==============
 # Variables
