@@ -46,7 +46,6 @@ ln -sf $dotfiles_dir/.config ~/.config
 ln -sf $dotfiles_dir/.tmux ~/.tmux
 ln -sf $dotfiles_dir/.zshrc ~/.zshrc
 ln -sf $dotfiles_dir/.tmux.conf ~/.tmux.conf
-ln -sf $dotfiles_dir/.gitconfig ~/.gitconfig
 
 #==============
 # Create a symlink if user is in a WSL environment to also link the hushlogin file
