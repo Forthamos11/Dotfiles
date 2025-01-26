@@ -41,3 +41,8 @@ ln -sf $dotfiles_dir/.config ~/.config
 ln -sf $dotfiles_dir/.tmux ~/.tmux
 ln -sf $dotfiles_dir/.zshrc ~/.zshrc
 ln -sf $dotfiles_dir/.tmux.conf ~/.tmux.conf
+
+#==============
+# Set zsh as the default shell
+#==============
+sudo chsh -s /bin/zsh
