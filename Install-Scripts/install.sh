@@ -3,10 +3,9 @@
 #==============
 # Handle the User Installations
 #==============
-sudo apt install eza thefuck
-sudo apt-get install zsh
-curl -fsSL https://bun.sh/install | bash
+chmod +x ./Install-Scripts/install-packages.sh
 chmod +x ./Install-Scripts/install-oh-my-zsh.sh
+/bin/bash ./Install-Scripts/install-packages.sh
 /bin/bash ./Install-Scripts/install-oh-my-zsh.sh
 
 
@@ -46,3 +45,10 @@ ln -sf $dotfiles_dir/.tmux.conf ~/.tmux.conf
 # Set zsh as the default shell
 #==============
 sudo chsh -s /bin/zsh
+
+#==============
+# Let the user know that we're done
+#==============
+echo "Installation Finished. Have an excellent day"
+echo "Here's the Log:"
+echo $log_file
