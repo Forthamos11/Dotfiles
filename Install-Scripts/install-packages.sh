@@ -2,6 +2,13 @@
 
 log_file=/install_progress_log.txt
 
+sudo apt-get -y install batcat
+if type -p batcat > /dev/null; then
+    echo "bat Installed" >> $log_file
+else
+    echo "bat FAILED TO INSTALL!!!" >> $log_file
+fi
+
 sudo apt-get -y install eza
 if type -p eza > /dev/null; then
     echo "eza Installed" >> $log_file

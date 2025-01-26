@@ -16,6 +16,13 @@ dotfiles_dir=~/Dotfiles
 log_file=~/install_progress_log.txt
 
 #==============
+# Create Backup's of Important files if anything failes
+#==============
+mkdir -p ~/config-backups
+cp ~/.bashrc ~/config-backups/.bashrc.bak
+cp ~/.zshrc ~/config-backups/.zshrc.bak
+
+#==============
 # Delete existing dot files and folders
 #==============
 sudo rm -rf ~/.vim > /dev/null 2>&1
@@ -23,7 +30,6 @@ sudo rm -rf ~/.vimrc > /dev/null 2>&1
 sudo rm -rf ~/.bashrc > /dev/null 2>&1
 sudo rm -rf ~/.tmux > /dev/null 2>&1
 sudo rm -rf ~/.tmux.conf > /dev/null 2>&1
-sudo rm -rf ~/.zsh_prompt > /dev/null 2>&1
 sudo rm -rf ~/.zshrc > /dev/null 2>&1
 sudo rm -rf ~/.gitconfig > /dev/null 2>&1
 sudo rm -rf ~/.antigen > /dev/null 2>&1
@@ -40,6 +46,14 @@ ln -sf $dotfiles_dir/.config ~/.config
 ln -sf $dotfiles_dir/.tmux ~/.tmux
 ln -sf $dotfiles_dir/.zshrc ~/.zshrc
 ln -sf $dotfiles_dir/.tmux.conf ~/.tmux.conf
+ln -sf $dotfiles_dir/.gitconfig ~/.gitconfig
+
+#==============
+# Create a symlink if user is in a WSL environment to also link the hushlogin file
+#==============
+if [ -n "$WSL_DISTRO_NAME" ]; then
+    ln -sf $dotfiles_dir/.hushlogin ~/.hushlogin
+fi
 
 #==============
 # Set zsh as the default shell
