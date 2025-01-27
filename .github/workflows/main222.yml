@@ -1,0 +1,33 @@
+name: Run Script
+
+on:
+  push:
+    branches: [ Failure ]
+  pull_request:
+    branches: [ Failure ]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Make script executable
+        run: chmod +x ./Install-Scripts/install.sh
+
+      - name: Run the script
+        run: ./Install-Scripts/install.sh
+      
+      - name: Create issue on failure
+        if: failure() && steps.run-command.outcome != 'cancelled' # Only if the run command failed and wasn't cancelled
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const output = `Command failed with the following output:\n\`\`\`\n${{ steps.run-command.outcome == 'failure' && steps.run-command.outputs.stderr || steps.run-command.outputs.stdout || 'No output captured'}}\n\`\`\``;
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'CI Build Failed',
+              body: output
+            });
