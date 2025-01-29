@@ -9,11 +9,11 @@ else
     echo "bat FAILED TO INSTALL!!!" >> $log_file
 fi
 
-sudo apt-get -y install eza
-if type -p eza > /dev/null; then
-    echo "eza Installed" >> $log_file
+sudo apt-get -y install exa
+if type -p exa > /dev/null; then
+    echo "exa Installed" >> $log_file
 else
-    echo "eza FAILED TO INSTALL!!!" >> $log_file
+    echo "exa FAILED TO INSTALL!!!" >> $log_file
 fi
 
 sudo apt-get -y install thefuck
@@ -101,6 +101,13 @@ if type -p colorize > /dev/null; then
     echo "colorize Installed" >> $log_file
 else
     echo "colorize FAILED TO INSTALL!!!" >> $log_file
+fi
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if type -p brew > /dev/null; then
+    echo "homebrew installed" >> $log_file
+else
+    echo "homebrew FAILED TO INSTALL!!!" >> $log_file
 fi
 
 #==============
