@@ -96,6 +96,13 @@ else
     echo "tmux FAILED TO INSTALL!!!" >> $log_file
 fi
 
+sudo apt-get -y install colorize
+if type -p colorize > /dev/null; then
+    echo "colorize Installed" >> $log_file
+else
+    echo "colorize FAILED TO INSTALL!!!" >> $log_file
+fi
+
 #==============
 # Give the user a summary of what has been installed
 #==============
