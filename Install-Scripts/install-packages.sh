@@ -16,6 +16,20 @@ else
     echo "exa FAILED TO INSTALL!!!" >> $log_file
 fi
 
+sudo apt-get -y install eza
+if type -p eza > /dev/null; then
+    echo "eza installed" >> $log_file
+else
+    echo "eza FAILED TO INSTALL!!!" >> $log_file
+fi
+
+sudo apt-get -y install neovim
+if type -p nvim > /dev/null; then
+    echo "Neovim installed" >> $log_file
+else
+    echo "Neovim FAILED TO INSTALL!!!" >> $log_file
+fi
+
 sudo apt-get -y install thefuck
 if type -p thefuck > /dev/null; then
     echo "thefuck Installed" >> $log_file
