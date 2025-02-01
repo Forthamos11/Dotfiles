@@ -19,10 +19,10 @@ jobs:
         run: mv ~/work/Dotfiles/ ~/dotfiles
 
       - name: Make script executable
-        run: chmod +x ./Install-Scripts/install.sh
+        run: chmod +x ~/dotfiles/Install-Scripts/install.sh
 
       - name: Run the script
-        run: ./Install-Scripts/install.sh
+        run: ~/dotfiles/Install-Scripts/install.sh
       
       - name: Create issue on failure
         if: failure() && steps.run-command.outcome != 'cancelled' # Only if the run command failed and wasn't cancelled
