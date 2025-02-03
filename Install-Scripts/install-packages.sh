@@ -124,6 +124,23 @@ else
     echo "homebrew FAILED TO INSTALL!!!" >> $log_file
 fi
 
+sudo apt-get -y install stow
+if type -p stow > /dev/null; then
+    echo "stow installed" >> $log_file
+else
+    echo "stow FAILED TO INSTALL!!!" >> $log_file
+fi
+
+# Installing oh my posh as a prompt
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+
+#==============
+# Install the two Plugins we're using and the Theme
+#==============
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
+
+
 #==============
 # Give the user a summary of what has been installed
 #==============

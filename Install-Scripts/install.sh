@@ -62,17 +62,6 @@ fi
 sudo chsh -s /bin/zsh
 
 #==============
-# Install the two Plugins we're using and the Theme
-#==============
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
-
-#==============
-# Install the Starship prompt
-#==============
-brew install starship
-
-#==============
 # Let the user know that we're done
 #==============
 echo "Installation Finished. Have an excellent day"
